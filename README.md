@@ -1,2 +1,3 @@
 # blog_django
-https://drive.google.com/file/d/10W5-F4bBacYDAmWjspMHYXoH0OfgrWLm/view?usp=sharing
+drive link : https://drive.google.com/file/d/10W5-F4bBacYDAmWjspMHYXoH0OfgrWLm/view?usp=sharing
+deploy link : https://blog.nishchaltiwari.repl.co/   ( takes time to load as it goes down after inactivity )
