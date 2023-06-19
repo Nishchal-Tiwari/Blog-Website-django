@@ -1,0 +1,61 @@
+{% extends "home.html" %}
+
+{% block start %}
+<div class=" bg-gray-50">
+    <div class=" px-10 py-6 mx-auto">
+          
+          <!--author-->
+       <div class="max-w-6xl px-10 py-6 mx-auto bg-gray-50">
+          
+          <a href="#_" class=block transition duration-200 ease-out transform hover:scale-110">
+              <img class="object-cover w-full shadow-sm h-full" src="/{{blog.image}}">
+          </a>
+
+          <!--post categories-->
+          <div class="flex items-center justify-start mt-4 mb-4">
+              <a href="#"class="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4">Django</a>
+              <a href="#"class="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4">Python</a>
+              <a href="#"class="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500">Able</a>
+           </div>
+          <div class="mt-2">
+              <!--post heading-->
+              <a href="#"
+                  class="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-purple-500  hover:underline">{{blog.title}}</a>
+
+                  <!--post views-->
+                  <div class="flex justify-start items-center mt-2">
+                      <p class="text-sm text-green-500 font-bold bg-gray-100 rounded-full py-2 px-2 hover:text-red-500">Author</p>
+                      <p class="text-sm text-gray-400 font-bold ml-5">{{blog.author}}</p>
+                  
+                  </div>
+
+                  <!--author avator-->
+                 <div class="font-light text-gray-600">
+                    
+                      <a href="#" class="flex items-center mt-6 mb-6">
+                          <h1 class="font-light text-gray-700 hover:underline"> last updated at : {{blog.date_posted}}</h1>
+                      </a>
+                </div>
+         </div>
+      
+         <!--end post header-->
+              <!--post content-->
+   <div class="max-w-4xl p-4 px-10  mx-auto text-2xl text-gray-700 m-1 rounded bg-gray-100">
+
+       <!--content body-->
+       <div>
+              {{blog.description|safe}}
+       </div>
+
+       
+
+          </div>
+      </div>
+
+ 
+
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

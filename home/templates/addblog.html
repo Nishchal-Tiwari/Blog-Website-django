@@ -1,0 +1,49 @@
+{% extends "home.html" %}
+
+{% block start %}
+
+
+<div class="heading text-center font-bold text-2xl m-5 text-gray-800">Add New Blog</div>
+<style>
+  body {background:white !important;}
+</style>
+<form action="/addblog/" method="post" id="myForm" enctype="multipart/form-data">
+    {% csrf_token %}
+  <div class="editor mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl">
+    
+    <input class="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" name="title" spellcheck="false" placeholder="Title" type="text">
+    <input class="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" name="slug" spellcheck="false" placeholder="Unique Slug" type="text">
+    <!-- <textarea class="description bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none" spellcheck="false" placeholder="Describe everything about this post here"></textarea> -->
+    <div id="editor"></div> 
+    <input type="hidden" id="contentInput" name="description">
+    <br>
+    <input type="file" name="image">
+    <div class="buttons flex" id="btn">
+      <div class="btn border border-gray-300 p-1 px-4 font-semibold cursor-pointer text-gray-500 ml-auto"> <a href="/">Cancel</a></div>
+      <div class="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500" ><button type="submit">Post</button></div>
+    </div>
+  </div>
+</form>
+  <script>
+    var quill = new Quill('#editor', {
+      theme: 'snow' // Use the 'snow' theme for a rich text editor
+    });
+    function setContent() {
+    var content = quill.root.innerHTML;
+    document.getElementById('contentInput').value = content;
+    }
+    document.getElementById('myForm').addEventListener('submit', setContent);
+  
+  </script>
+  <style>
+    .ql-editor {
+      min-height: 200px;
+     
+    }
+    #btn{
+      margin-top: 10px;
+    }
+
+  </style>
+
+{% endblock %}
